@@ -3,8 +3,8 @@
 Plugin Name: Google Friends Connect Widget
 Plugin URI: http://www.ergensin.nl
 Description: Google Friendsconnect OpenID & Faces widget.
-Version: 1.0.1
-Author: Björn Verzijlbergh; Ergensin.nl, 1.0.1 update by Mike Bijon, www.EtchSoftware.com
+Version: 1.0
+Author: Björn Verzijlbergh; Ergensin.nl
 Author URI: http://www.ergensin.nl
 */
 
@@ -21,7 +21,6 @@ class Google_FC_Widget extends WP_Widget {
 		$title = apply_filters('widget_title', empty($instance['title']) ? '&nbsp;' : $instance['title']);
 		$gfcsiteid = empty($instance['gfcsiteid']) ? '16608749133281031856' : $instance['gfcsiteid'];
 		$gfcnumrow = empty($instance['gfcnumrow']) ? '5' : $instance['gfcnumrow'];
-		$gfcwidth  = empty($instance['gfcwidth'])  ? '200' : $instance['gfcwidth'];
 		$gfccolbor = empty($instance['gfccolbor']) ? '#cccccc' : $instance['gfccolbor'];
 		$gfccolbkg = empty($instance['gfccolbkg']) ? '#e0ecff' : $instance['gfccolbkg'];
 		$gfccoltxt = empty($instance['gfccoltxt']) ? '#333333' : $instance['gfccoltxt'];
@@ -40,7 +39,7 @@ class Google_FC_Widget extends WP_Widget {
         <!-- Include the Google Friend Connect javascript library. -->
         <script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>
         <!-- Define the div tag where the gadget will be inserted. -->
-        <div id="div-4670536917163138983" style="width:<?php echo $gfcwidth; ?>px;border:1px solid #cccccc;" align="center"></div>
+        <div id="div-4670536917163138983" style="width:200px;border:1px solid #cccccc;" align="center"></div>
         <!-- Render the gadget into a div. -->
         <script type="text/javascript">
         var skin = {};
@@ -72,7 +71,6 @@ class Google_FC_Widget extends WP_Widget {
 		$instance['title'] = strip_tags(stripslashes($new_instance['title']));
 		$instance['gfcsiteid'] = strip_tags(stripslashes($new_instance['gfcsiteid']));
 		$instance['gfcnumrow'] = strip_tags(stripslashes($new_instance['gfcnumrow']));
-		$instance['gfcwidth'] = empty($instance['gfcwidth']) ? '200' : strip_tags(stripslashes($new_instance['gfcwidth']));
 		$instance['gfccolbor'] = empty($instance['gfccolbor']) ? '#cccccc' : strip_tags(stripslashes($new_instance['gfccolbor']));
 		$instance['gfccolbkg'] = empty($instance['gfccolbkg']) ? '#e0ecff' : strip_tags(stripslashes($new_instance['gfccolbkg']));
 		$instance['gfccoltxt'] = empty($instance['gfccoltxt']) ? '#333333' : strip_tags(stripslashes($new_instance['gfccoltxt']));
@@ -94,7 +92,6 @@ class Google_FC_Widget extends WP_Widget {
 		$title = htmlspecialchars($instance['title']);
 		$gfcsiteid = htmlspecialchars($instance['gfcsiteid']);
 		$gfcnumrow = htmlspecialchars($instance['gfcnumrow']);
-		$gfcwidth = empty($instance['gfcwidth']) ? '200' : htmlspecialchars($instance['gfcwidth']);
 		$gfccolbor = empty($instance['gfccolbor']) ? '#cccccc' : htmlspecialchars($instance['gfccolbor']);
 		$gfccolbkg = empty($instance['gfccolbkg']) ? '#e0ecff' : htmlspecialchars($instance['gfccolbkg']);
 		$gfccoltxt = empty($instance['gfccoltxt']) ? '#333333' : htmlspecialchars($instance['gfccoltxt']);
@@ -110,7 +107,6 @@ class Google_FC_Widget extends WP_Widget {
 		echo '<p style="text-align:right;"><label for="' . $this->get_field_name('title') . '">' . __('Title:') . ' <input style="width: 250px;" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $title . '" /></label></p>';
 		echo '<p style="text-align:right;"><label for="' . $this->get_field_name('gfcsiteid') . '">' . __('Google Friend Connect Site-ID :') . ' <input style="width: 200px;" id="' . $this->get_field_id('gfcsiteid') . '" name="' . $this->get_field_name('gfcsiteid') . '" type="text" value="' . $gfcsiteid . '" maxlength="20" /></label></p>';
 		echo '<p style="text-align:right;"><label for="' . $this->get_field_name('gfcnumrow') . '">' . __('Number of Rows       (max: 15):') . ' <input style="width: 80px;" id="' . $this->get_field_id('gfcnumrow') . '" name="' . $this->get_field_name('gfcnumrow') . '" type="text" value="' . $gfcnumrow . '" maxlength="2" /></label></p>';
-		echo '<p style="text-align:right;"><label for="' . $this->get_field_name('gfcwidth') . '">' . __('Width   (200, no &ldquo;px&rdquo;):') . ' <input style="width: 80px;" id="' . $this->get_field_id('gfcwidth') . '" name="' . $this->get_field_name('gfcwidth') . '" type="text" value="' . $gfcwidth . '" maxlength="3" /></label></p>';
 		echo '<p style="text-align:right;"><label for="' . $this->get_field_name('gfccolbor') . '">' . __('Border Color         (#123456):') . ' <input style="width: 80px;" id="' . $this->get_field_id('gfccolbor') . '" name="' . $this->get_field_name('gfccolbor') . '" type="text" value="' . $gfccolbor. '" maxlength="7" /></label></p>';
 		echo '<p style="text-align:right;"><label for="' . $this->get_field_name('gfccolbkg') . '">' . __('Top Color            (#123456):') . ' <input style="width: 80px;" id="' . $this->get_field_id('gfccolbkg') . '" name="' . $this->get_field_name('gfccolbkg') . '" type="text" value="' . $gfccolbkg . '" maxlength="7" /></label></p>';
 		echo '<p style="text-align:right;"><label for="' . $this->get_field_name('gfccoltxt') . '">' . __('Top Text Color       (#123456):') . ' <input style="width: 80px;" id="' . $this->get_field_id('gfccoltxt') . '" name="' . $this->get_field_name('gfccoltxt') . '" type="text" value="' . $gfccoltxt . '" maxlength="7" /></label></p>';
