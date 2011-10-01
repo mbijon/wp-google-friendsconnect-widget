@@ -1,58 +1,72 @@
-=== Google Friends Connect Widget ===
-Contributors: bthv
-Donate link: http://www.ergensin.nl/
-Tags: Google, Friends, accounts, login, connect, OpenID, Friendconnect, Friendsconnect
+=== Google FriendsConnect Members Gadget ===
+Contributors: bthv, mbijon
+Author URI: http://www.etchsoftware.com
+Tags: Google, Friends, accounts, login, connect, OpenID, Friendconnect, Friendsconnect, Gadget
+License: GPL2
 Requires at least: 2.8
-Tested up to: 2.8
-Stable tag: 1.0
+Tested up to: 3.2.1
+Stable tag: 1.0.1
 
-Google Friendsconnect OpenID & Faces widget.
 
 == Description ==
 
-This widget allows you to display a little (200px) widget in the sidebar which allows you to display the Google FC members of your site.
+This creates a WordPress Widget for Google's 'Members Gadget' from their FriendConnect tools. Add to your site from the WordPress Widgets page.
 
-This widget was intended for use with [Google Friend Connect Integration](http://wordpress.org/extend/plugins/google-friend-connect-integration/), but it can be used independant as well. 
-However; for full friend Connect integration, I'd suggest you install it anyway.
+For full FriendsConnect integration, check the Google Friend Connect Integration plugin: http://wordpress.org/extend/plugins/google-friend-connect-integration/
 
-I'm still developing this widget, so more options will be added in the near future.
+Minimum requirements:
+* Wordpress **2.8** or more recent
 
-Minimum requirements are:
+Recommended:
+* A sidebar that is at least 200px wide. The CSS can be set smaller, but formatting of Google's Gadget breaks at small sizes.
 
-* Wordpress **2.8** or more recent.
-* A sidebar that is **AT LEAST** 200px wide.
 
 == Installation ==
 
 This section describes how to install the widget and get it working.
 
-1. Upload the map contained in this .zip file to the `/wp-content/plugins/` directory.
-1. Activate the widget through the 'Appearance -> Widgets' menu in WordPress.
-1. Lookuop your Google Friendsconnect ID, and paste it in the Widget options.
+1. Upload the folder and the files in it to the '/wp-content/plugins/' directory.
+2. Activate the widget through the 'Appearance -> Widgets' menu in WordPress.
+3. Enter your FriendConnect Site ID in the Widget config 'FriendsConnect ID' textbox.
+
+**To get a FriendsConnect ID**
+1. Register at http://www.google.com/friendconnect/
+2. After signing up, click 'Plug-ins & APIs' > 'Rest API'
+3. Look for a "Consumer Key" (example, *:01234567890) and copy the numbers that are after the "*:" part
+
 
 == Frequently Asked Questions ==
 
 = Is this a plugin? =
+Yes, but the only thing it contains is a WordPress Widget. There is not a seperate configuration screen.
 
-No, this is **NOT** a plugin, it contains only a widget.
+= Where do I find my Google FriendsConnect ID? =
+1. Register at http://www.google.com/friendconnect/
+2. After signing up, click 'Plug-ins & APIs' > 'Rest API'
+3. Look for a "Consumer Key" (example, *:01234567890) and copy the numbers that are after the "*:" part
 
-= Where do I find my Google Friends Connect ID? =
-
-Here: [Google Friend Connect](http://www.google.com/friendconnect) look at the page underneath the "Site Settings" link on the right hand side of the page. You must, however, have at least one site setup, or setup a new site.
 
 == Screenshots ==
 
-1. Screenshot of the Widget.
+1. Screenshot of the Gadget in the default sidebar. Using the Twenty Eleven theme and default colors
+
 
 == Changelog ==
+
+= Version 1.0.1 =
++ Added CSS width to be changed
++ Fixed border color setting (was locked on Google-default)
++ Updated instructions for finding FriendsConnect ID
++ Converted plugin files to UTF-8
++ Tested upto WordPress 3.2.1
 
 = Version 1.0 =
 + Added Color Options
 + Added support for more rows.
-+ Converted to multiwidget.
++ Converted to multiwidget
 
 = Version 0.2.5 =
 + Added several options
 
 = Version 0.1 =
-Initial Widget.
+Initial Widget
